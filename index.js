@@ -11,21 +11,13 @@ let driver = new Builder()
 .build();
 
 const setup = async () => {
-    try {
-        await driver.get('http://www.reddit.com');
-        // await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-        await driver.wait(until.titleIs('reddit: the front page of the internet'), 3000);
-        } finally {
-        }
+    await driver.get('http://www.reddit.com');
+    await driver.wait(until.titleIs('reddit: the front page of the internet'), 3000);
 }
+
 Max.addHandler("bang", () => {
-    total_height = driver.executeScript("return document.body.scrollHeight");
-    
-    Max.post(total_height);
-    for (let i = 0; i<=100; i++){
+        for (let i = 0; i<=10; i++){
         driver.executeScript("window.scrollBy(0,10)");
     }
-
-	// driver.xecuteScript("window.scrollBy(0,1000)");
 });
 setup();
