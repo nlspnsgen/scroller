@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 45.0, 285.0, 1348.0, 630.0 ],
+		"rect" : [ 8.0, 94.0, 1173.0, 729.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -65,18 +65,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-25",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 553.0, 437.0, 34.0, 22.0 ],
-					"text" : "limi~"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -98,6 +86,10 @@
 					"preset_data" : [ 						{
 							"number" : 1,
 							"data" : [ 5, "obj-42", "number", "int", 0, 5, "obj-45", "flonum", "float", 6.435079097747803, 5, "obj-11", "live.gain~", "float", 0.0, 5, "obj-81", "filtergraph~", "nfilters", 1, 9, "obj-81", "filtergraph~", "setoptions", 0, 2, 1, 0, 0, 8, "obj-81", "filtergraph~", "params", 0, 307.281951904296875, 0.98660808801651, 1.0, 5, "obj-75", "flonum", "float", 307.281951904296875, 5, "obj-74", "flonum", "float", 0.98660808801651, 5, "obj-72", "flonum", "float", 1.0 ]
+						}
+, 						{
+							"number" : 2,
+							"data" : [ 5, "obj-42", "number", "int", 0, 5, "obj-45", "flonum", "float", 6.435079097747803, 5, "obj-11", "live.gain~", "float", 0.0, 5, "obj-81", "filtergraph~", "nfilters", 1, 9, "obj-81", "filtergraph~", "setoptions", 0, 2, 1, 0, 0, 8, "obj-81", "filtergraph~", "params", 0, 307.281951904296875, 0.98660808801651, 1.0, 5, "obj-75", "flonum", "float", 307.281951904296875, 5, "obj-74", "flonum", "float", 0.98660808801651, 5, "obj-72", "flonum", "float", 1.0, 5, "obj-28", "flonum", "float", 109.0 ]
 						}
  ]
 				}
@@ -206,7 +198,7 @@
 					"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 387.0, 101.5, 360.0, 155.0 ],
-					"setfilter" : [ 0, 2, 1, 0, 0, 576.04608154296875, 0.935082316398621, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+					"setfilter" : [ 0, 2, 1, 0, 0, 307.281951904296875, 0.98660808801651, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 					"varname" : "filtergraph~"
 				}
 
@@ -484,7 +476,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 217.5, 693.0, 457.0, 280.0 ],
+					"patching_rect" : [ 217.5, 693.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -512,8 +504,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

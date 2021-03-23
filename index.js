@@ -11,12 +11,15 @@ let driver = new Builder()
 .build();
 
 const setup = async () => {
-    await driver.get('http://www.reddit.com');
-    await driver.wait(until.titleIs('reddit: the front page of the internet'), 3000);
+    await driver.get('https://www.reddit.com/r/nextfuckinglevel');
+    // await driver.wait(until.titleIs('reddit: the front page of the internet'), 3000);
 }
 
 Max.addHandler("bang", () => {
-        for (let i = 0; i<=10; i++){
+    let randInt = Math.ceil(Math.random()*20)+6;
+    if(randInt === 8) randInt = 100;
+    Max.post(randInt);
+    for (let i = 0; i<=20; i++){
         driver.executeScript("window.scrollBy(0,10)");
     }
 });
