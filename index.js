@@ -9,18 +9,41 @@ let driver = new Builder()
 .forBrowser("chrome")
 .setChromeOptions(options)
 .build();
-
+let windows = [];
+// Broken record
 const setup = async () => {
     await driver.get('https://www.reddit.com/r/nextfuckinglevel');
-    // await driver.wait(until.titleIs('reddit: the front page of the internet'), 3000);
+    makeWindows();
+}   
+
+const makeWindows = async () => {
+    await driver.switchTo().newWindow('window');
+    await driver.get('https://lookbook.nu/');
+    await driver.switchTo().newWindow('window');
+    await driver.get('https://reddit.com/r/videos');
+    await driver.switchTo().newWindow('window');
+    await driver.get('https://reddit.com/');
+    windows = await driver.getAllWindowHandles();
+    Max.post("WINDOWS INIT", windows);
 }
 
-Max.addHandler("bang", () => {
-    let randInt = Math.ceil(Math.random()*20)+6;
-    if(randInt === 8) randInt = 100;
-    Max.post(randInt);
+const scrollOnRandomWindow = async () => {
+    let randomInt =  Math.ceil(Math.random()*4)-1;
+    let handle = windows[randomInt];
+    Max.post("windows: " + windows);
+    Max.post("currentHandle: ", handle);
+    await driver.switchTo().window(handle);
     for (let i = 0; i<=20; i++){
         driver.executeScript("window.scrollBy(0,10)");
     }
+}
+
+Max.addHandler("bang", () => {
+    Max.post("bang received");
+    scrollOnRandomWindow();
 });
+
+Max.addHandler("myEvent", (msg) => {
+    Max.post("MESSAGE: " + msg);
+})
 setup();
