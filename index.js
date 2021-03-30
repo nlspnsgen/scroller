@@ -18,13 +18,23 @@ const setup = async () => {
 
 const makeWindows = async () => {
     await driver.switchTo().newWindow('window');
-    await driver.get('https://lookbook.nu/');
+    await driver.get('https://www.reddit.com/r/nextfuckinglevel');
+    for (let i = 0; i<=200; i++){
+        driver.executeScript("window.scrollBy(0,10)");
+    }
     await driver.switchTo().newWindow('window');
-    await driver.get('https://reddit.com/r/videos');
+    await driver.get('https://www.reddit.com/r/nextfuckinglevel');
+    for (let i = 0; i<=300; i++){
+        driver.executeScript("window.scrollBy(0,10)");
+    }
     await driver.switchTo().newWindow('window');
-    await driver.get('https://reddit.com/');
+    await driver.get('https://www.reddit.com/r/nextfuckinglevel');
+    for (let i = 0; i<=100; i++){
+        driver.executeScript("window.scrollBy(0,10)");
+    }
     windows = await driver.getAllWindowHandles();
     Max.post("WINDOWS INIT", windows);
+    Max.outletBang();
 }
 
 const scrollOnRandomWindow = async () => {
@@ -33,7 +43,7 @@ const scrollOnRandomWindow = async () => {
     Max.post("windows: " + windows);
     Max.post("currentHandle: ", handle);
     await driver.switchTo().window(handle);
-    for (let i = 0; i<=20; i++){
+    for (let i = 0; i<=15; i++){
         driver.executeScript("window.scrollBy(0,10)");
     }
 }
@@ -43,7 +53,4 @@ Max.addHandler("bang", () => {
     scrollOnRandomWindow();
 });
 
-Max.addHandler("myEvent", (msg) => {
-    Max.post("MESSAGE: " + msg);
-})
 setup();
